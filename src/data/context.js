@@ -4,9 +4,11 @@ export const Context = createContext()
 
 export const ContextProvider = props => {
     const [currentUser, setCurrentUser] = useState({})
+    const [users, setUsers] = useState([])
 
     const value = {
-        currentUser, setCurrentUser
+        currentUser, setCurrentUser,
+        users, setUsers
     }
 
     return (

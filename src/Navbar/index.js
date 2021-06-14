@@ -2,14 +2,16 @@ import React, { useState, useContext } from 'react'
 
 import { Context } from '../data/context'
 
+import { getUsers } from './getUsers'
+
 const Navbar = () => {
     const { currentUser } = useContext(Context)
     const [username, setUsername] = useState(currentUser.username)
     const [secret, setSecret] = useState(currentUser.secret)
 
-    function createBuyer() {}
-
-    console.log('currentUser', currentUser)
+    function createBuyer() {
+        getUsers(data => console.log('users', data))
+    }
 
     return (
         <div style={{ display: 'inline-block', width: '100%', backgroundColor: '#bae7ff' }}>
