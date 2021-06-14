@@ -1,0 +1,11 @@
+* {
+  font-family: Avenir;
+}
+
+#root {
+  position: absolute;
+  top: 0;
+  min-height: 100vh;
+  left: 0px;
+  min-width: 100vw;
+}
