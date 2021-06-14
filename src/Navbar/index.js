@@ -1,21 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 
-// import { createUser } from './createUser'
-
-import { currentUser } from '../data'
+import { Context } from '../data/context'
 
 const Navbar = () => {
+    const { currentUser } = useContext(Context)
     const [username, setUsername] = useState(currentUser.username)
     const [secret, setSecret] = useState(currentUser.secret)
 
-    function createBuyer() {
-        return
-        // const randomUsername = `Funny-Pumpkin-${Math.floor(Math.random() * 10000)}`
-        // const randomSecret = `secret-${Math.floor(Math.random() * 10000)}`
-        // createUser(randomUsername, randomSecret, user => console.log('New User', user))
-    }
+    function createBuyer() {}
 
-    console.log(process.env)
+    console.log('currentUser', currentUser)
 
     return (
         <div style={{ display: 'inline-block', width: '100%', backgroundColor: '#bae7ff' }}>
