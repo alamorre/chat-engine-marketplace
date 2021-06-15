@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-export const createUser = (username, secret, successFunc) => {
+export const createUser = (data, successFunc) => {
     axios.post(
         `https://api.chatengine.io/users/`,
-        { username: username, secret: secret },
+        data,
         { headers: { "Private-Key": process.env.REACT_APP_CHAT_ENGINE_PRIVATE_KEY } }
     )
 

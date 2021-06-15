@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import Navbar from '../Navbar'
 
 import { sellers } from '../data'
+import { Context } from '../data/context'
 
 import { Row, Col } from 'react-grid-system'
 
 const ListingsPage = () => {
+    const { users } = useContext(Context)
+
     function renderSellers() {
-        return sellers.map((seller, index) => {
+        return users.map((seller, index) => {
+            console.log(seller.custom_json)
             return (
                 <Col 
                     key={`product-${index}`} 
@@ -17,12 +21,12 @@ const ListingsPage = () => {
                     <div style={{ padding: '24px', border: '1px solid black', margin: '12px' }}>
                         <img
                             alt='textbook' 
-                            src={seller.photo} 
+                            src={seller.custom_json.photos[0]} 
                             style={{ width: '100%', height: '320px', objectFit: 'cover' }} 
                         />
-                        <p>Product: {seller.product}</p>
-                        <p>Price: {seller.price}</p>
-                        <p>Seller Name: {seller.name}</p>
+                        <p>Product: {seller.custom_json.product}</p>
+                        <p>Price: {seller.custom_json.price}</p>
+                        <p>Seller Name: {seller.first_name}</p>
                         <a href={`/product/${seller.id}`}>
                             <button style={{ padding: '12px' }}>Details</button>
                         </a>

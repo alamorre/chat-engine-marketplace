@@ -1,17 +1,36 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useRef, useEffect } from 'react'
 
+import { sellers } from '../data'
 import { Context } from '../data/context'
 
 import { getUsers } from './getUsers'
+import { createUser } from './createUser'
 
 const Navbar = () => {
-    const { currentUser } = useContext(Context)
+    const didMountRef = useRef(false)
+    const { currentUser, setUsers } = useContext(Context)
     const [username, setUsername] = useState(currentUser.username)
     const [secret, setSecret] = useState(currentUser.secret)
 
-    function createBuyer() {
-        getUsers(data => console.log('users', data))
+    function syncUsers() {
+        getUsers(users => {
+            console.log('Fetched users', users)
+            sellers.map(seller => {
+                if(!users.find(user => seller.username === user.username)) {
+                    console.log('Creating user', seller.username)
+                    createUser(seller)
+                }
+            })
+            setUsers(users)
+        })
     }
+
+    useEffect(() => {
+        if (!didMountRef.current) {
+            didMountRef.current = true
+            syncUsers()
+        }
+    })
 
     return (
         <div style={{ display: 'inline-block', width: '100%', backgroundColor: '#bae7ff' }}>
@@ -24,9 +43,6 @@ const Navbar = () => {
             <p style={{ float: 'right', display: 'inline-block' }}>
                 Username: <input placeholder='Username' value={username}  onChange={e => setUsername(e.target.value)} /> <br/>
                 User Secret: <input placeholder='Secret' value={secret} onChange={e => setSecret(e.target.value)} /> <br/>
-                <button onClick={() => createBuyer()} >
-                    Switch User
-                </button>
             </p>    
 
             <div style={{ float: 'right', display: 'inline-block', padding: '40px' }}>

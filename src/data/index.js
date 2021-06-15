@@ -66,7 +66,7 @@ export const sellers = [
             product: 'Beginner French',
             price: '$25',
             description: 'This book is brand new so the price is final and will be good for the next 4 years before they update it.',
-            photo: [
+            photos: [
                 'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/beginner-french-min.png',
                 'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/beginner-french-min.png',
                 'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/beginner-french-min.png',
@@ -83,7 +83,7 @@ export const sellers = [
             product: 'Grade 10 Chemistry',
             price: '$40',
             description: 'This book is quite old but the price is negotiable',
-            photo: [
+            photos: [
                 'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/chemistry-min.png',
                 'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/chemistry-min.png',
                 'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/chemistry-min.png',
