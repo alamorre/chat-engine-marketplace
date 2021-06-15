@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react'
 
 import { Row, Col } from 'react-grid-system'
 
-import { sellers } from '../data'
 import { Context } from '../data/context'
 
 import Navbar from '../Navbar'

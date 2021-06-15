@@ -8,7 +8,7 @@ import { createUser } from './createUser'
 
 const Navbar = () => {
     const didMountRef = useRef(false)
-    const { currentUser, setUsers } = useContext(Context)
+    const { currentUser, setCurrentUser, setUsers } = useContext(Context)
     const [username, setUsername] = useState(currentUser.username)
     const [secret, setSecret] = useState(currentUser.secret)
 
@@ -22,6 +22,9 @@ const Navbar = () => {
                 }
             })
             setUsers(users)
+            setCurrentUser(sellers[0])
+            setUsername(sellers[0].username)
+            setSecret(sellers[0].secret)
         })
     }
 
