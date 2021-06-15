@@ -12,7 +12,6 @@ const ListingsPage = () => {
 
     function renderSellers() {
         return users.map((seller, index) => {
-            console.log(seller.custom_json)
             return (
                 <Col 
                     key={`product-${index}`} 
