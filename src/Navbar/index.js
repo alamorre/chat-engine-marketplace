@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef, useEffect } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
 
 import { sellers } from '../data'
 import { Context } from '../data/context'
@@ -9,8 +9,6 @@ import { createUser } from './createUser'
 const Navbar = () => {
     const didMountRef = useRef(false)
     const { currentUser, setCurrentUser, setUsers } = useContext(Context)
-    const [username, setUsername] = useState(currentUser.username)
-    const [secret, setSecret] = useState(currentUser.secret)
 
     function syncUsers() {
         getUsers(users => {
@@ -23,8 +21,6 @@ const Navbar = () => {
             })
             setUsers(users)
             setCurrentUser(sellers[0])
-            setUsername(sellers[0].username)
-            setSecret(sellers[0].secret)
         })
     }
 
@@ -38,8 +34,6 @@ const Navbar = () => {
     function changeCurrentUser(username) {
         const user = sellers.find(seller => seller.username === username)
         setCurrentUser(user)
-        setUsername(user.username)
-        setSecret(user.secret)
     }
 
     return (
@@ -51,8 +45,8 @@ const Navbar = () => {
             </a>
         
             <div style={{ float: 'right', padding: '12px' }}>
-                <div>Username: {username}</div>
-                <div>User Secret: {secret}</div>
+                <div>Username: {currentUser.username}</div>
+                <div>User Secret: {currentUser.secret}</div>
                 <button onClick={() => changeCurrentUser('jane@doe.co')}>Change to Jane</button>
             </div>
 
