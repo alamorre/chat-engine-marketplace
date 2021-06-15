@@ -9,7 +9,7 @@ import Chat from './Chat'
 
 const DetailsPage = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const { users } = useContext(Context)
+    const { currentUser, users } = useContext(Context)
     const sellerID = parseInt(window.location.pathname.split('/product/')[1])
     const seller = users.find(seller => seller.id === sellerID)
 
@@ -28,16 +28,18 @@ const DetailsPage = () => {
     }
 
     return (
-        <Row>
+        <div>
             <Navbar />
 
             { 
                 seller && 
-                <div style={{ width: '100%' }}>
+                <Row style={{ width: '100%' }}>
                     <Col xs={12} md={6}>
-                        <div style={{ padding: '12px' }}>
-                            <div style={{ display: 'flex' }}>
-                                { renderPhotos(seller.custom_json.photos) }
+                        <div style={{ margin: '12px' }}>
+                            <div style={{ width: '100%', overflowX: 'scroll' }}>
+                                <div style={{ display: 'flex' }}>
+                                    { renderPhotos(seller.custom_json.photos) }
+                                </div>
                             </div>
                             <h1>{seller.custom_json.product}</h1>
                             <h5>Price: {seller.custom_json.price}</h5>
@@ -49,9 +51,15 @@ const DetailsPage = () => {
                                 </button>
                             </a>
                             {' '}
-                            <button onClick={() => setIsOpen(!isOpen)} style={{ color: 'white', backgroundColor: '#1890ff', padding: '12px', border: '1px solid rgb(24, 144, 255)', borderRadius: '3px' }}>
-                                {isOpen && 'Close'} Chat with Seller
-                            </button>
+                            {
+                                seller.username !== currentUser.username &&
+                                <button 
+                                    onClick={() => setIsOpen(!isOpen)} 
+                                    style={{ color: 'white', backgroundColor: '#1890ff', padding: '12px', border: '1px solid rgb(24, 144, 255)', borderRadius: '3px' }}
+                                >
+                                    {isOpen && 'Close'} Chat with Seller
+                                </button>
+                            }
                         </div>
                     </Col>
                     {
@@ -60,9 +68,9 @@ const DetailsPage = () => {
                             <Chat seller={seller}/>
                         </Col>
                     }
-                </div>
+                </Row>
             }
-        </Row>
+        </div>
     );
 }
 

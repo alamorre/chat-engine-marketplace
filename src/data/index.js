@@ -1,8 +1,3 @@
-export const currentUser = {
-    username: 'Funny-Pumpkin-7727',
-    secret: 'secret-18736',
-}
-
 export const projectID = process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID
 
 export const sellers = [

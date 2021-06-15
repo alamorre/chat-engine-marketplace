@@ -43,10 +43,10 @@ const Navbar = () => {
                 </h1>
             </a>
         
-            <p style={{ float: 'right', display: 'inline-block' }}>
-                Username: <input placeholder='Username' value={username}  onChange={e => setUsername(e.target.value)} /> <br/>
-                User Secret: <input placeholder='Secret' value={secret} onChange={e => setSecret(e.target.value)} /> <br/>
-            </p>    
+            <div style={{ float: 'right', padding: '12px' }}>
+                <div>Username: {username}</div>
+                <div>User Secret: {secret}</div>
+            </div>
 
             <div style={{ float: 'right', display: 'inline-block', padding: '40px' }}>
                 <a href='/chats'>My Chats</a>

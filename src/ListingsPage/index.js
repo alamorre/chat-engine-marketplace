@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 
 import Navbar from '../Navbar'
 
-import { sellers } from '../data'
 import { Context } from '../data/context'
 
 import { Row, Col } from 'react-grid-system'
@@ -25,7 +24,7 @@ const ListingsPage = () => {
                         />
                         <p>Product: {seller.custom_json.product}</p>
                         <p>Price: {seller.custom_json.price}</p>
-                        <p>Seller Name: {seller.first_name}</p>
+                        <p>Seller Name: {seller.first_name} {seller.last_name}</p>
                         <a href={`/product/${seller.id}`}>
                             <button style={{ padding: '12px' }}>Details</button>
                         </a>
@@ -38,7 +37,6 @@ const ListingsPage = () => {
     return (
         <Row>
             <Navbar />
-
             { renderSellers() }    
         </Row>
     );
