@@ -35,6 +35,13 @@ const Navbar = () => {
         }
     })
 
+    function changeCurrentUser(username) {
+        const user = sellers.find(seller => seller.username === username)
+        setCurrentUser(user)
+        setUsername(user.username)
+        setSecret(user.secret)
+    }
+
     return (
         <div style={{ display: 'inline-block', width: '100%', backgroundColor: '#bae7ff' }}>
             <a href='/'>
@@ -46,6 +53,7 @@ const Navbar = () => {
             <div style={{ float: 'right', padding: '12px' }}>
                 <div>Username: {username}</div>
                 <div>User Secret: {secret}</div>
+                <button onClick={() => changeCurrentUser('jane@doe.co')}>Change to Jane</button>
             </div>
 
             <div style={{ float: 'right', display: 'inline-block', padding: '40px' }}>
