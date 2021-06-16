@@ -18,15 +18,12 @@ const Navbar = () => {
     function syncUsers() {
         getUsers(users => {
             console.log('Fetched users', users)
-            
-            {/* Run this code to load Chat Engine users */}
             // sellers.map(seller => {
             //     if(!users.find(user => seller.username === user.username)) {
             //         console.log('Creating user', seller.username)
             //         createUser(seller)
             //     }
             // })
-
             setUsers(users)
             setCurrentUser(sellers[0])
         })
