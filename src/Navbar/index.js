@@ -5,8 +5,9 @@ import { Context } from '../data/context'
 
 import { getUsers } from './getUsers'
 import { createUser } from './createUser'
+import UserModal from './UserModal'
 
-import { Menu } from 'antd';
+import { Menu, Popover } from 'antd';
 import { UserOutlined, MessageOutlined } from '@ant-design/icons';
 
 const Navbar = () => {
@@ -38,11 +39,6 @@ const Navbar = () => {
         }
     })
 
-    function changeCurrentUser(username) {
-        const user = sellers.find(seller => seller.username === username)
-        setCurrentUser(user)
-    }
-
     return (
         <div style={{ display: 'inline-block', width: '100%', backgroundColor: '#bae7ff' }}>
             <Menu theme="dark" selectedKeys={[current]} mode="horizontal" style={{ height: '64px', textAlign: 'right' }}>
@@ -59,7 +55,14 @@ const Navbar = () => {
                 </Menu.Item>
                 
                 <Menu.Item key="app" icon={<UserOutlined />} style={{ height: '64px', paddingTop: '10px' }}>
-                    My Account
+                    <Popover 
+                        placement="bottomRight" 
+                        title={null} 
+                        trigger="click"
+                        content={<UserModal />}
+                    >
+                        {currentUser.first_name} {currentUser.last_name}
+                    </Popover>
                 </Menu.Item>
             </Menu>
         </div>
