@@ -1,4 +1,6 @@
-# Chat Engine Marketplace
+# Add Chat to Your Marketplace
+
+![Teams Build with Chat Engine](https://chat-engine-assets.s3.amazonaws.com/tutorials/marketplace-chat-photo.png)
 
 This is a example online marketplace with Chat Engine fully integrated.
 
