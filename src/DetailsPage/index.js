@@ -64,7 +64,7 @@ const DetailsPage = () => {
                     </Col>
                     {
                         isOpen && 
-                        <Col xs={12} md={6} style={{ height: 'calc(100vh - 104px)', border: '1px solid #bae7ff', overflowY: 'hidden' }}>
+                        <Col xs={12} md={6} style={{ height: 'calc(100vh - 64px)', border: '1px solid #bae7ff' }}>
                             <Chat seller={seller}/>
                         </Col>
                     }
