@@ -12,9 +12,8 @@ export const sellers = [
             price: '$35',
             description: 'This book is NOT in very nice condition. But it is very cheap so still worth it :)',
             photos: [
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/math-min.png',
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/math-min.png',
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/math-min.png',
+                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/math/1.png',
+                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/math/2.png',
             ]
         }
     },
@@ -29,8 +28,8 @@ export const sellers = [
             price: '$45',
             description: 'This book is in very nice condition. The price is final so nothing to negotiate',
             photos: [
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/physics-min.png',
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/physics-min.png',
+                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/physics/1.png',
+                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/physics/2.png',
             ]
         }    
     },
@@ -45,9 +44,8 @@ export const sellers = [
             price: '$55',
             description: 'This book is in very nice condition. It will help make sure you get the A+ grade you are looking for :)',
             photos: [
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/advanced-french-min.png',
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/advanced-french-min.png',
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/advanced-french-min.png',
+                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/advanced_french/1.png',
+                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/advanced_french/2.png',
             ]
         }
     },
@@ -62,9 +60,8 @@ export const sellers = [
             price: '$25',
             description: 'This book is brand new so the price is final and will be good for the next 4 years before they update it.',
             photos: [
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/beginner-french-min.png',
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/beginner-french-min.png',
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/beginner-french-min.png',
+                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/beginner_french/1.png',
+                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/beginner_french/2.png',
             ]
         }
     },
@@ -79,9 +76,8 @@ export const sellers = [
             price: '$40',
             description: 'This book is quite old but the price is negotiable',
             photos: [
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/chemistry-min.png',
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/chemistry-min.png',
-                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/chemistry-min.png',
+                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/chemistry/1.png',
+                'https://chat-engine-assets.s3.amazonaws.com/marketplace/textbooks/chemistry/2.png',
             ]
         }
     },
