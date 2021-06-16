@@ -6,8 +6,6 @@ import { Context } from '../data/context'
 
 import { Row, Col } from 'react-grid-system'
 
-import { SelectOutlined } from '@ant-design/icons'
-
 import { Card } from 'antd'
 
 const { Meta } = Card

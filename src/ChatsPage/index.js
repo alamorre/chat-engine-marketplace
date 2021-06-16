@@ -17,7 +17,7 @@ const ChatsPage = () => {
             {   // You need the creds correct before rendering Chat Engine
                 currentUser.username && currentUser.secret &&
                 <ChatEngine 
-                    height='calc(100vh - 104px)'
+                    height='calc(100vh - 64px)'
                     projectID={projectID}
                     userName={currentUser.username}
                     userSecret={currentUser.secret}
