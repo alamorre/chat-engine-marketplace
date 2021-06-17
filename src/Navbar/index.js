@@ -18,12 +18,15 @@ const Navbar = () => {
     function syncUsers() {
         getUsers(users => {
             console.log('Fetched users', users)
+            let usersWereAdded = false
             // sellers.map(seller => {
             //     if(!users.find(user => seller.username === user.username)) {
             //         console.log('Creating user', seller.username)
             //         createUser(seller)
+            //         usersWereAdded = true;
             //     }
             // })
+            if (usersWereAdded) window.location.reload();
             setUsers(users)
             setCurrentUser(sellers[0])
         })
